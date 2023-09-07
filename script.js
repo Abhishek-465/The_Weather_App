@@ -47,18 +47,53 @@ const getWeather2 = (city) => {
 			tempm.innerHTML = response.temp
 			feels_likem.innerHTML = response.feels_like
 			humiditym.innerHTML = response.humidity
+
+		})
+		.catch(err => console.error(err));
+}
+
+getWeather2("Mumbai")
+
+const getWeather3 = (city) => {
+	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+		.then(response => response.json())
+		.then((response) => {
+			console.log(response)
 			
 			tempb.innerHTML = response.temp
 			feels_likeb.innerHTML = response.feels_like
 			humidityb.innerHTML = response.humidity
 
+		})
+		.catch(err => console.error(err));
+}
+
+getWeather3("Boston")
+
+
+const getWeather4 = (city) => {
+	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+		.then(response => response.json())
+		.then((response) => {
+			console.log(response)
+
 			
 			templ.innerHTML = response.temp
 			feels_likel.innerHTML = response.feels_like
 			humidityl.innerHTML = response.humidity
-			
 
-			
+		})
+		.catch(err => console.error(err));
+}
+
+getWeather4("Lucknow")
+
+const getWeather5 = (city) => {
+	fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+		.then(response => response.json())
+		.then((response) => {
+			console.log(response)
+
 			tempk.innerHTML = response.temp
 			feels_likek.innerHTML = response.feels_like
 			humidityk.innerHTML = response.humidity
@@ -68,11 +103,4 @@ const getWeather2 = (city) => {
 		})
 		.catch(err => console.error(err));
 }
-submit.addEventListener("click", (e) => {
-	e.preventDefault()
-	getWeather(city.value)
-})
-getWeather2("Mumbai")
-getWeather2("Boston")
-getWeather2("Lucknow")
-getWeather2("Kolkata")
+getWeather5("Kolkata")
